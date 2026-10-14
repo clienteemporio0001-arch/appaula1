@@ -18,8 +18,11 @@
     "web": {
       "name": "ASTRO CALC",
       "bundler": "metro",
-      "output": "static",
+      "output": "single",
       "themeColor": "#05070D"
+    },
+    "experiments": {
+      "baseUrl": "/appaula1"
     }
   }
 }

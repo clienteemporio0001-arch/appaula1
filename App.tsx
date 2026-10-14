@@ -3,7 +3,7 @@ import {Animated,Platform,Pressable,ScrollView,StatusBar,StyleSheet,Text,View,us
 import {SafeAreaProvider,SafeAreaView} from 'react-native-safe-area-context';
 import Svg,{Circle,Ellipse,Path,Rect} from 'react-native-svg';
 import {apply,initialState} from './src/calculator.cjs';
-import type {CalculatorState} from './src/calculator.cjs';
+import type {CalculatorState} from './src/calculator';
 const C={bg:'#05070D',neon:'#00D9FF',blue:'#007BFF',white:'#FFFFFF',panel:'#171D2B',muted:'#8895AD'};
 const KEYS=[['AC','±','%','÷'],['7','8','9','×'],['4','5','6','−'],['1','2','3','+'],['⌫','0','.','=']];
 function Astronaut(){return <Svg width={105} height={112} viewBox="0 0 120 130"><Ellipse cx="60" cy="65" rx="55" ry="38" stroke={C.neon} strokeWidth="1" strokeDasharray="3 6" fill="none" opacity=".4" transform="rotate(-25 60 65)"/><Circle cx="14" cy="27" r="2" fill={C.neon}/><Circle cx="102" cy="22" r="1.8" fill="white"/><Path d="M41 77Q60 67 79 77L86 109Q60 122 34 109Z" fill="#DDEAFB" stroke="#4A86B0" strokeWidth="2"/><Path d="M40 87L28 100M80 87L92 100M46 110L43 122M75 110L78 122" stroke="#DDEAFB" strokeWidth="12" strokeLinecap="round"/><Rect x="50" y="86" width="21" height="16" rx="4" fill="#13334A" stroke={C.neon}/><Circle cx="60" cy="47" r="30" fill="#DFEDFF" stroke="#4A86B0" strokeWidth="2"/><Rect x="38" y="32" width="44" height="30" rx="14" fill="#0A2C44" stroke={C.neon} strokeWidth="2.5"/><Path d="M44 46Q53 34 67 36" stroke="#B7FFFF" strokeWidth="3" strokeLinecap="round" opacity=".7"/></Svg>}

@@ -1,15 +1,19 @@
 name: Publicar Web
+
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,16 +21,34 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      - run: npm install
-      - run: npm run check && npm test
-      - run: npx expo export --platform web --base-url /appaula1/
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+          node-version: '22'
+
+      - name: Instalar dependências
+        run: npm install --no-audit --no-fund
+
+      - name: Validar TypeScript e lógica matemática
+        run: npm run check && npm test
+
+      - name: Exportar Expo Web para GitHub Pages
+        run: npm run export:web
+
+      - name: Validar HTML e caminhos de assets
+        run: node scripts/verify-web.cjs
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Enviar site estático
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-      - id: deployment
+
+      - name: Publicar no GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
