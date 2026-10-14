@@ -52,3 +52,8 @@ jobs:
       - name: Publicar no GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Verificar URL pública e JavaScript
+        env:
+          PUBLIC_URL: ${{ steps.deployment.outputs.page_url }}
+        run: node scripts/verify-live.cjs
