@@ -13,7 +13,12 @@
       "bundleIdentifier": "com.mmsolucoes.astrocalc"
     },
     "android": {
-      "package": "com.mmsolucoes.astrocalc"
+      "package": "com.mmsolucoes.astrocalc",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#05070D"
+      }
     },
     "web": {
       "name": "ASTRO CALC",
@@ -23,6 +28,22 @@
     },
     "experiments": {
       "baseUrl": "/appaula1"
-    }
+    },
+    "icon": "./assets/icon.png",
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#05070D",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 220,
+          "resizeMode": "contain",
+          "dark": {
+            "image": "./assets/splash-icon.png",
+            "backgroundColor": "#05070D"
+          }
+        }
+      ]
+    ]
   }
 }

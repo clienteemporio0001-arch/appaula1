@@ -3,3 +3,9 @@ node_modules/
 dist/
 .env*
 *.log
+
+# Generated Android / Expo prebuild outputs
+android/
+ios/
+assets/*.png
+out-apk/
