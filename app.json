@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "ASTRO CALC",
+    "slug": "astro-calc",
+    "scheme": "astrocalc",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#05070D",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mmsolucoes.astrocalc"
+    },
+    "android": {
+      "package": "com.mmsolucoes.astrocalc"
+    },
+    "web": {
+      "name": "ASTRO CALC",
+      "bundler": "metro",
+      "output": "static",
+      "themeColor": "#05070D"
+    }
+  }
+}
